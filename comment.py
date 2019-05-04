@@ -18,5 +18,11 @@ for a in data:
 	if len(a) > 10000:
 		new.append(a)
 print('一共有', len(new), '筆留言長度大於10000')
-print(new[0])
-print(new[10])
+
+
+good = []
+for d in data:
+	if 'good' in d:
+		good.append(d)
+print('總共有', len(good), '筆資料提到good')
+print(good[3])
