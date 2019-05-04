@@ -7,4 +7,4 @@ with open('reviews.txt', 'r') as f:
 		if count % 1000 ==0:
 			print(len(data))
 
-print(len(data))
+print('檔案讀取完畢, 總共有', len(data), '筆留言')
