@@ -12,3 +12,11 @@ sum_len = 0
 for d in data:
 	sum_len += len(d)
 print('留言的平均長度為', sum_len / len(data), '個字')
+
+new = []
+for a in data:
+	if len(a) > 10000:
+		new.append(a)
+print('一共有', len(new), '筆留言長度大於10000')
+print(new[0])
+print(new[10])
