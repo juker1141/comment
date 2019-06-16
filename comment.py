@@ -1,16 +1,20 @@
+import time
+import progressbar
+
 def read_file(filename):
 	data = []
 	count = 0
+	bar = progressbar.ProgressBar(max_value=1000000)
 	with open(filename, 'r') as f:
 		for line in f:
 			data.append(line)
 			count += 1
-			if count % 1000 == 0:
-				print(len(data))
+			bar.update(count)
 	print('檔案載入中...')
 	return data
 
 def wc_file(data):
+	start_time = time.time()
 	wc = {} #word_count
 	for d in data:
 		words = d.split(' ')
@@ -21,6 +25,8 @@ def wc_file(data):
 				wc[word] = 1
 	print('檔案已讀取完畢')
 	print('總共有', len(data), '筆留言')
+	end_time = time.time()
+	print('一共花了', round(end_time - start_time, 2), '秒讀取')
 	return wc
 
 def avg_len(data):
